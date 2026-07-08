@@ -775,3 +775,19 @@ body {
         padding: 2rem 1rem;
     }
 }
+/* More repos list */
+.more-repos {
+    margin-top: 3rem;
+}
+
+.more-repos a {
+    color: var(--vibe-cyan);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--vibe-cyan);
+}
+
+.more-repos a:hover {
+    color: var(--vibe-pink);
+    border-bottom-color: var(--vibe-pink);
+    text-shadow: 0 0 8px var(--vibe-pink);
+}
