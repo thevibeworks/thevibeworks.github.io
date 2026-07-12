@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grok-plugin-cc → grok inside claude code</title>
+    <meta name="description" content="Use xAI's Grok from Claude Code: code reviews, task delegation, session transfer. The Grok counterpart to openai/codex-plugin-cc.">
+    <link rel="canonical" href="https://thevibeworks.github.io/grok-plugin/">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="scan-lines"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="prompt-arrow">&gt;</div>
+                <h1 class="logo"><a href="../" style="color: inherit; text-decoration: none;">thevibeworks</a> / grok-plugin-cc</h1>
+            </div>
+            <nav class="nav">
+                <a href="#install" class="nav-link">&gt; install</a>
+                <a href="#proof" class="nav-link">&gt; proof</a>
+                <a href="https://github.com/thevibeworks/grok-plugin-cc" class="nav-link">&gt; github</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="hero">
+                <div class="hero-glitch">
+                    <h2 class="hero-title" data-text="grok inside claude code">grok inside claude code</h2>
+                </div>
+                <div class="terminal-text">
+                    <span class="cursor-blink">$</span> <span class="type-writer">second-opinion reviews, task delegation, session handoff_</span>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">commands</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">runtime deps</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Apache-2.0</span>
+                        <span class="stat-label">license</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="install" class="section">
+                <h3 class="section-title">&gt; install.sh</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">~/claude-code/60-seconds.sh</span>
+                    </div>
+                    <div class="terminal-content">
+                        <p><span class="prompt">&gt;</span> /plugin marketplace add thevibeworks/grok-plugin-cc</p>
+                        <p><span class="prompt">&gt;</span> /plugin install grok@grok-cc</p>
+                        <p><span class="prompt">&gt;</span> /grok:setup</p>
+                        <p><span class="prompt">&gt;</span> /grok:review</p>
+                        <p><span class="comment"># needs your own grok CLI (x.ai/cli) + xAI account or XAI_API_KEY</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">&gt; commands.dir</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">~/grok-plugin-cc/help.md</span>
+                    </div>
+                    <div class="terminal-content">
+                        <p><span class="prompt">&gt;</span> /grok:review → read-only code review, structured findings (severity, file:line, confidence)</p>
+                        <p><span class="prompt">&gt;</span> /grok:adversarial-review → steerable review that attacks the design, not just the code</p>
+                        <p><span class="prompt">&gt;</span> /grok:rescue → delegate a task to grok, resumable, background-capable, --write to opt into edits</p>
+                        <p><span class="prompt">&gt;</span> /grok:transfer → import this claude session into grok, continue with grok --resume</p>
+                        <p><span class="prompt">&gt;</span> /grok:status · /grok:result · /grok:cancel · /grok:setup → job control + prereqs</p>
+                        <p><span class="comment"># reviews are read-only by construction: grok gets read_file/grep/list_dir — no shell, no writes, even in containers</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="proof" class="section">
+                <h3 class="section-title">&gt; proof.log</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">~/scratch-repo/grok-review.out</span>
+                    </div>
+                    <div class="terminal-content">
+                        <p><span class="comment"># planted two bugs, ran /grok:review — verbatim excerpt:</span></p>
+                        <p><span class="prompt">&gt;</span> Verdict: needs-attention</p>
+                        <p><span class="prompt">&gt;</span> 1. [critical] Discount formula ignores 0-100 percent contract → pay.js:1-5 (95%)</p>
+                        <p><span class="prompt">&gt;</span> 2. [high] refund deletes all pendingRefunds unconditionally → pay.js:6-10 (88%)</p>
+                        <p><span class="comment"># one demo, not a benchmark — review quality is grok's; the plugin guarantees the wiring and read-only enforcement. reproduce: npm test (52 tests)</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">&gt; connect.to.repo</h3>
+                <div class="vibe-terminal">
+                    <div class="connect-options">
+                        <a href="https://github.com/thevibeworks/grok-plugin-cc" class="connect-btn github">
+                            <span class="btn-icon">⚡</span>
+                            <span>github.com/thevibeworks/grok-plugin-cc</span>
+                        </a>
+                        <a href="https://github.com/thevibeworks/grok-plugin-cc/releases/latest" class="connect-btn claude">
+                            <span class="btn-icon">📦</span>
+                            <span>latest release</span>
+                        </a>
+                    </div>
+                    <div class="vibe-prompt">
+                        <p><span class="comment"># unofficial community plugin — not affiliated with xAI or anthropic</span></p>
+                        <p><span class="comment"># architecture credit: openai/codex-plugin-cc (apache-2.0)</span></p>
+                        <p><span class="comment"># AI agents: fetch github.com/thevibeworks/grok-plugin-cc/blob/main/llms.txt</span></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span class="blink">●</span>
+                    <a href="../" style="color: inherit;">thevibeworks</a> © 2026 →
+                    <span class="cyber-text">grok-plugin-cc v0.1.0</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
